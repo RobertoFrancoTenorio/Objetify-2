@@ -50,11 +50,6 @@ public class Biblioteca{
         reproductor.reproducir(canciones.get(cancionNo));
     }
     
-    /*public String reproduceTodo()
-    {
-        return reproductor.reproducir(canciones.toArray(canciones));
-    }*/
-    
     /**
      * Metodo para borrar todas las canciones de la biblioteca
      */
@@ -86,5 +81,20 @@ public class Biblioteca{
         Random rnd= new Random(System.currentTimeMillis());
         aux=rnd.nextInt(canciones.size());
         reproducir(aux);
+    }
+    
+    /**
+     * Metodo encargado de buscar una cancion especifico
+     * @param recibe el nombre de la cancion deseada
+     */
+    public void buscaCancion(String nombre)
+    {
+        for(int i=0; i<canciones.size();i++){
+            if(canciones.get(i) == nombre){
+                String aux="";
+                aux=canciones.get(i);
+                reproductor.reproducir(aux);
+            }
+        }
     }
 }
